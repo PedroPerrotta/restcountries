@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+
+<% for (let index = 0; index < 247; index = index + 4) { %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col mx-5 mb-5 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[index].flag %> " >
+      </div>
+    </div>
+    <div class="col mx-0 mb-5 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[index + 1].flag %> " >
+      </div>
+    </div>
+    <div class="col ms-5 mb-5 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[index + 2].flag %> " >
+      </div>
+    </div>
+    <div class="col mx-5 mb-5 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[index + 3].flag %> " >
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } %> <%- include("partials/footer"); -%>
