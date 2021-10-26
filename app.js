@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     response.on("end", () => {
       holeInfo = JSON.parse(body);
       res.render("allCountries", {
-          countries: holeInfo
+        countries: holeInfo
       });
       body = "";
     });
@@ -30,10 +30,3 @@ app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
 
-// let body = [];
-// request.on('data', (chunk) => {
-//   body.push(chunk);
-// }).on('end', () => {
-//   body = Buffer.concat(body).toString();
-//   // at this point, `body` has the entire request body stored in it as a string
-// });

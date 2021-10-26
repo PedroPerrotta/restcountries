@@ -1,28 +1,82 @@
 <%- include("partials/header"); -%>
 
-<h1>Home</h1>
-
 <% for (let index = 0; index < 247; index = index + 4) { %>
 <div class="container-fluid">
   <div class="row">
-    <div class="col mx-5 mb-5 countryBox">
+    <div class="col mx-6 mb-6 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index].flag %> " >
+        <img class="flag-img" src=" <%= countries[index].flags.png %> " >
+      </div>
+      <div class="data-div">
+        <div class="country-name">
+          <%= countries[index].name %>    
+        </div>
+        <div class="country-population">
+          <%= countries[index].population %>    
+        </div>
+        <div class="country-region">
+          <%= countries[index].region %>    
+        </div>
+        <div class="country-capital">
+          <%= countries[index].capital %>    
+        </div>
       </div>
     </div>
-    <div class="col mx-0 mb-5 countryBox">
+    <div class="col mx-0 mb-6 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 1].flag %> " >
+        <img class="flag-img" src=" <%= countries[index + 1].flags.png %> " >
+      </div>
+      <div class="data-div">
+        <div class="country-name">
+          <%= countries[index + 1].name %>
+        </div>
+        <div class="country-population">
+          <%= countries[index + 1].population %>
+        </div>
+        <div class="country-region">
+          <%= countries[index + 1].region %>
+        </div>
+        <div class="country-capital">
+          <%= countries[index + 1].capital %>
+        </div>
       </div>
     </div>
-    <div class="col ms-5 mb-5 countryBox">
+    <div class="col ms-6 mb-6 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 2].flag %> " >
+        <img class="flag-img" src=" <%= countries[index + 2].flags.png %> " >
+      </div>
+      <div class="data-div">
+        <div class="country-name">
+          <%= countries[index + 2].name %>
+        </div>
+        <div class="country-population">
+          <%= countries[index + 2].population %>
+        </div>
+        <div class="country-region">
+          <%= countries[index + 2].region %>
+        </div>
+        <div class="country-capital">
+          <%= countries[index + 2].capital %>
+        </div>
       </div>
     </div>
-    <div class="col mx-5 mb-5 countryBox">
+    <div class="col mx-6 mb-6 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 3].flag %> " >
+        <img class="flag-img" src=" <%= countries[index + 3].flags.png %> " >
+      </div>
+      <div class="data-div">
+        <div class="country-name">
+          <%= countries[index + 3].name %>
+        </div>
+        <div class="country-population">
+          <%= countries[index + 3].population %>
+        </div>
+        <div class="country-region">
+          <%= countries[index + 3].region %>
+        </div>
+        <div class="country-capital">
+          <%= countries[index + 3].capital %>
+        </div>
       </div>
     </div>
   </div>
