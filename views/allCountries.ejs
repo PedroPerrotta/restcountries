@@ -1,81 +1,100 @@
 <%- include("partials/header"); -%>
 
+<div class="container-fluid mb-5 p-0">
+  <div class="row country-filter mx-6 mb-4">
+    <div class="country-input col-10 p-0">
+      <i class="fas fa-search magnifying-icon"></i>
+      <input
+        class="country-selector p-0"
+        type="text"
+        name=""
+        id=""
+        placeholder="Search for a country..."
+      />
+    </div>
+    <div class="dropdown p-0 d-flex justify-content-end region-filter col-2">
+      <button class="btn btn-secondary dropdown-toggle shadow-none dropdown-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+        Filter by Region
+      </button>
+      <ul class="dropdown-menu regions-list p-0" aria-labelledby="dropdownMenuButton1">
+        <li class="region-item"><a class="dropdown-item region-anchor region-top" href="#">Africa</a></li>
+        <li class="region-item"><a class="dropdown-item region-anchor" href="#">America</a></li>
+        <li class="region-item"><a class="dropdown-item region-anchor" href="#">Asia</a></li>
+        <li class="region-item"><a class="dropdown-item region-anchor" href="#">Europe</a></li>
+        <li class="region-item"><a class="dropdown-item region-anchor region-bottom" href="#">Oceania</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <% for (let index = 0; index < 247; index = index + 4) { %>
 <div class="container-fluid">
   <div class="row">
-    <div class="col mx-6 mb-6 countryBox">
+    <div class="col mx-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index].flags.png %> " >
+        <img class="flag-img" src=" <%= countries[index].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name">
-          <%= countries[index].name %>    
+        <div class="country-name"><%= countries[index].name %></div>
+        <div class="country-data">
+          Population: <%= (countries[index].population).toLocaleString('en-US')
+          %>
         </div>
-        <div class="country-population">
-          <%= countries[index].population %>    
+        <div class="country-data">Region: <%= countries[index].region %></div>
+        <div class="country-data">Capital: <%= countries[index].capital %></div>
+      </div>
+    </div>
+    <div class="col mx-0 mb-6 p-0 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[index + 1].flags.png %> " />
+      </div>
+      <div class="data-div">
+        <div class="country-name"><%= countries[index + 1].name %></div>
+        <div class="country-data">
+          Population: <%= (countries[index +
+          1].population).toLocaleString('en-US') %>
         </div>
-        <div class="country-region">
-          <%= countries[index].region %>    
+        <div class="country-data">
+          Region: <%= countries[index + 1].region %>
         </div>
-        <div class="country-capital">
-          <%= countries[index].capital %>    
+        <div class="country-data">
+          Capital: <%= countries[index + 1].capital %>
         </div>
       </div>
     </div>
-    <div class="col mx-0 mb-6 countryBox">
+    <div class="col ms-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 1].flags.png %> " >
+        <img class="flag-img" src=" <%= countries[index + 2].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name">
-          <%= countries[index + 1].name %>
+        <div class="country-name"><%= countries[index + 2].name %></div>
+        <div class="country-data">
+          Population: <%= (countries[index +
+          2].population).toLocaleString('en-US') %>
         </div>
-        <div class="country-population">
-          <%= countries[index + 1].population %>
+        <div class="country-data">
+          Region: <%= countries[index + 2].region %>
         </div>
-        <div class="country-region">
-          <%= countries[index + 1].region %>
-        </div>
-        <div class="country-capital">
-          <%= countries[index + 1].capital %>
+        <div class="country-data">
+          Capital: <%= countries[index + 2].capital %>
         </div>
       </div>
     </div>
-    <div class="col ms-6 mb-6 countryBox">
+    <div class="col mx-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 2].flags.png %> " >
+        <img class="flag-img" src=" <%= countries[index + 3].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name">
-          <%= countries[index + 2].name %>
+        <div class="country-name"><%= countries[index + 3].name %></div>
+        <div class="country-data">
+          Population: <%= (countries[index +
+          3].population).toLocaleString('en-US') %>
         </div>
-        <div class="country-population">
-          <%= countries[index + 2].population %>
+        <div class="country-data">
+          Region: <%= countries[index + 3].region %>
         </div>
-        <div class="country-region">
-          <%= countries[index + 2].region %>
-        </div>
-        <div class="country-capital">
-          <%= countries[index + 2].capital %>
-        </div>
-      </div>
-    </div>
-    <div class="col mx-6 mb-6 countryBox">
-      <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 3].flags.png %> " >
-      </div>
-      <div class="data-div">
-        <div class="country-name">
-          <%= countries[index + 3].name %>
-        </div>
-        <div class="country-population">
-          <%= countries[index + 3].population %>
-        </div>
-        <div class="country-region">
-          <%= countries[index + 3].region %>
-        </div>
-        <div class="country-capital">
-          <%= countries[index + 3].capital %>
+        <div class="country-data">
+          Capital: <%= countries[index + 3].capital %>
         </div>
       </div>
     </div>

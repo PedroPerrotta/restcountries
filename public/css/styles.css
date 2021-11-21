@@ -1,4 +1,3 @@
-/* GENERAL STYLES */
 body {
   background-color: #202c37;
   font-family: "Nunito Sans", sans-serif;
@@ -17,12 +16,89 @@ body {
   margin-left: 65px;
 }
 
-/* STYLES TO COUNTRY BOXES */
+.page-title {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.top-bar {
+  background-color: #2b3945;
+}
+
+.theme-mode {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 3.75rem;
+}
+.theme-mode .theme-p {
+  margin: 0 0 0 5px;
+  display: inline;
+}
+
+.country-filter .country-input {
+  color: white;
+}
+.country-filter .country-input .magnifying-icon {
+  background-color: #2b3945;
+  height: 45px;
+  padding: 15px 0 0 10px;
+  vertical-align: bottom;
+  width: 45px;
+}
+.country-filter .country-input .country-selector {
+  background-color: #2b3945;
+  border-style: none;
+  color: white;
+  height: 45px;
+  margin-left: -4px;
+  width: 50%;
+}
+.country-filter .country-input .country-selector:focus {
+  outline: none;
+}
+.country-filter .country-input .country-selector::placeholder {
+  color: white;
+}
+.country-filter .dropdown-button {
+  background-color: #2b3945;
+  border-style: none;
+  padding-right: 30px;
+  max-width: 160px;
+}
+.country-filter .dropdown-arrow {
+  background-color: #2b3945;
+  border-style: none;
+  max-width: 40px;
+}
+.country-filter .regions-list {
+  border-radius: 7px;
+  background-color: #2b3945;
+  inset: 0 auto auto 0;
+  margin-top: 5px;
+  transform: translate(135px, 47px);
+}
+.country-filter .regions-list .region-item .region-anchor {
+  color: white;
+}
+.country-filter .regions-list .region-item .region-anchor:hover {
+  color: black;
+}
+.country-filter .regions-list .region-top {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.country-filter .regions-list .region-bottom {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
 .countryBox {
   background-color: #2b3945;
   border-radius: 7px;
-  height: 500px;
-  padding: 0;
+  height: 450px;
 }
 .countryBox .flag-div {
   height: 250px;
@@ -38,11 +114,15 @@ body {
 .data-div {
   margin-left: 30px;
   margin-top: 30px;
+  color: white;
 }
 .data-div .country-name {
-  color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 800;
+  margin-bottom: 15px;
+}
+.data-div .country-data {
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=styles.css.map */
