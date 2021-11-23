@@ -25,6 +25,7 @@ body {
 
 .top-bar {
   background-color: #2b3945;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
 }
 
 .theme-mode {
@@ -123,6 +124,24 @@ body {
 }
 .data-div .country-data {
   font-size: 17px;
+}
+
+.back-button {
+  background-color: #2b3945;
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+  color: white;
+  padding-right: 30px;
+  max-width: 160px;
+}
+.back-button .left-arrow-icon {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.country-flag {
+  width: 600px;
+  height: 400px;
 }
 
 /*# sourceMappingURL=styles.css.map */

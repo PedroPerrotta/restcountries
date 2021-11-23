@@ -19,29 +19,29 @@ body {
 }
 
 // STYLES TO HEADER
-
-.page-title {
-  color: hsl(0, 0%, 100%);
-  font-size: 25px;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.top-bar {
-  background-color: hsl(209, 23%, 22%);
-}
-
-.theme-mode {
-  color: hsl(0, 0%, 100%);
-  font-size: 15px;
-  font-weight: 600;
-  margin-right: 3.75rem;
-
-  .theme-p {
-    margin: 0 0 0 5px;
-    display: inline;
+  .page-title {
+    color: hsl(0, 0%, 100%);
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0;
   }
-}
+  
+  .top-bar {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  }
+  
+  .theme-mode {
+    color: hsl(0, 0%, 100%);
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3.75rem;
+    
+    .theme-p {
+      margin: 0 0 0 5px;
+      display: inline;
+    }
+  }
 
 // STYLES TO FILTERS
 
@@ -97,7 +97,7 @@ body {
     .region-item {
       .region-anchor {
         color: white;
-        
+
         &:hover {
           color: black;
         }
@@ -108,7 +108,7 @@ body {
       border-top-left-radius: 7px;
       border-top-right-radius: 7px;
     }
-    
+
     .region-bottom {
       border-bottom-left-radius: 7px;
       border-bottom-right-radius: 7px;
@@ -150,4 +150,23 @@ body {
   .country-data {
     font-size: 17px;
   }
+}
+
+.back-button {
+  background-color: hsl(209, 23%, 22%);
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  color: white;
+  padding-right: 30px;
+  max-width: 160px; 
+  
+  .left-arrow-icon {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.country-flag {
+  width: 600px;
+  height: 400px;
 }

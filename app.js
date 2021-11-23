@@ -11,6 +11,7 @@ let holeInfo = [];
 let str = "";
 let body = "";
 const url = "https://restcountries.com/v2/all";
+
 app.get("/", (req, res) => {
   https.get(url, function (response) {
     response.on("data", (chunk) => (body += chunk));
@@ -23,6 +24,18 @@ app.get("/", (req, res) => {
     });
   });
 });
+
+app.get("/:country", (req, res) => {
+  const singleCountryUrl = "https://restcountries.com/v2/name/" + req.params.country;
+  https.get(singleCountryUrl, function(response) {
+    response.on("data", function(data){
+      const countryData = JSON.parse(data);
+      res.render("singleCountry", {
+        country: countryData[0]
+      });
+    })
+  })
+})
 
 
 
