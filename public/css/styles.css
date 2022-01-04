@@ -112,17 +112,20 @@ body {
   width: 100%;
 }
 
-.data-div {
+.data-div,
+.single-country-information {
   margin-left: 30px;
   margin-top: 30px;
   color: white;
 }
-.data-div .country-name {
+.data-div .country-name,
+.single-country-information .country-name {
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 15px;
 }
-.data-div .country-data {
+.data-div .country-data,
+.single-country-information .country-data {
   font-size: 17px;
 }
 
@@ -141,7 +144,11 @@ body {
 
 .country-flag {
   width: 600px;
-  height: 400px;
+  height: 500px;
+}
+
+.single-country-information .country-name {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,12 +1,37 @@
 <%- include("partials/header"); -%>
 
 <div class="container-fluid mb-5 p-0">
-    <button type="button" class="mx-6 btn btn-secondary back-button"><i class="fas fa-long-arrow-alt-left left-arrow-icon"></i> Back</button>
+  <button type="button" class="mx-6 btn btn-secondary back-button">
+    <i class="fas fa-long-arrow-alt-left left-arrow-icon"></i> Back
+  </button>
 </div>
 
 <div class="container-fluid mb-5 p-0">
-    <img class="mx-6 country-flag" src=" <%= country.flag %> " />
-</div>
+  <div class="row">
+    <div class="col-5">
+      <img class="mx-6 country-flag" src=" <%= country.flags.png %> " />
+    </div>
 
+    <div class="single-country-information col-7 m-0">
+      <div class="country-name"><%= country.name %></div>
+      <div class="row">
+        <div class="col-6">
+          <div class="country-data">Native Name: <%= country.nativeName %></div>
+          <div class="country-data">
+            Population: <%= (country.population).toLocaleString('en-US') %>
+          </div>
+          <div class="country-data">Region: <%= country.region %></div>
+          <div class="country-data">Sub Region: <%= country.subregion %></div>
+          <div class="country-data">Capital: <%= country.capital %></div>
+        </div>
+        <div class="col-6">
+            <div class="country-data">Top Level Domain: <%= country.topLevelDomain %></div>
+            <div class="country-data">Currencies: <%= country.currencies[0].name %></div>
+            <div class="country-data">Languages: <%= country.languages.name %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%- include("partials/footer"); -%>

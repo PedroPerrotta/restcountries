@@ -136,7 +136,8 @@ body {
   }
 }
 
-.data-div {
+.data-div,
+.single-country-information {
   margin-left: 30px;
   margin-top: 30px;
   color: hsl(0, 0%, 100%);
@@ -151,6 +152,8 @@ body {
     font-size: 17px;
   }
 }
+
+// STYLES TO SINGLE COUNTRY PAGE
 
 .back-button {
   background-color: hsl(209, 23%, 22%);
@@ -168,5 +171,11 @@ body {
 
 .country-flag {
   width: 600px;
-  height: 400px;
+  height: 500px;
+}
+
+.single-country-information {
+  .country-name {
+    font-size: 30px;
+  }
 }
