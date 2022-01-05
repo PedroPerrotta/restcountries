@@ -21,9 +21,14 @@ body {
 // STYLES TO HEADER
   .page-title {
     color: hsl(0, 0%, 100%);
+    display: block;
     font-size: 25px;
     font-weight: 600;
     margin: 10px 0;
+
+    &:hover {
+      color: hsl(0, 0%, 100%);
+    }
   }
   
   .top-bar {
@@ -178,4 +183,23 @@ body {
   .country-name {
     font-size: 30px;
   }
+
+  .single-data {
+    font-weight: 600;
+  }
+}
+
+.borders-section {
+  margin-top: 100px;
+}
+
+.border-country {
+  background-color: hsl(209, 23%, 22%);
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  color: white;
+  padding-right: 30px;
+  margin-right: 10px;
+  max-width: 160px;
+  text-align: center; 
 }

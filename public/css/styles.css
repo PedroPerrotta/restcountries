@@ -18,9 +18,13 @@ body {
 
 .page-title {
   color: white;
+  display: block;
   font-size: 25px;
   font-weight: 600;
   margin: 10px 0;
+}
+.page-title:hover {
+  color: white;
 }
 
 .top-bar {
@@ -149,6 +153,24 @@ body {
 
 .single-country-information .country-name {
   font-size: 30px;
+}
+.single-country-information .single-data {
+  font-weight: 600;
+}
+
+.borders-section {
+  margin-top: 100px;
+}
+
+.border-country {
+  background-color: #2b3945;
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+  color: white;
+  padding-right: 30px;
+  margin-right: 10px;
+  max-width: 160px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

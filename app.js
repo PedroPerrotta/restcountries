@@ -57,10 +57,25 @@ app.get("/:country", (req, res) => {
         currencies = currencies + countryData[0].currencies[index].name;
       }
 
+      var borders = [];
+
+      if (countryData[0].borders.length === 1) {
+        borders[0] = countryData[0].borders[0];
+      } else {
+        var index = 0;
+        for (let index = 0; index < (countryData[0].borders.length) - 1; index++) {
+          borders[index] =
+            countryData[0].borders[index];
+        }
+        borders[index] =
+        countryData[0].borders[index];
+      }
+
       res.render("singleCountry", {
         country: countryData[0],
         currencies: currencies,
         languages: languages,
+        borders: borders
       });
     });
   });

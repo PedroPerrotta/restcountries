@@ -1,9 +1,9 @@
 <%- include("partials/header"); -%>
 
 <div class="container-fluid mb-5 p-0">
-  <button type="button" class="mx-6 btn btn-secondary back-button">
+  <a type="button" class="mx-6 btn btn-secondary back-button" href="/">
     <i class="fas fa-long-arrow-alt-left left-arrow-icon"></i> Back
-  </button>
+  </a>
 </div>
 
 <div class="container-fluid mb-5 p-0">
@@ -12,22 +12,34 @@
       <img class="mx-6 country-flag" src=" <%= country.flags.png %> " />
     </div>
 
-    <div class="single-country-information col-7 m-0">
+    <div class="single-country-information col-7 mt-5 ms-0">
       <div class="country-name"><%= country.name %></div>
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-6">
-          <div class="country-data">Native Name: <%= country.nativeName %></div>
-          <div class="country-data">
+          <div class="country-data single-data mb-2">Native Name: <%= country.nativeName %></div>
+          <div class="country-data single-data mb-2">
             Population: <%= (country.population).toLocaleString('en-US') %>
           </div>
-          <div class="country-data">Region: <%= country.region %></div>
-          <div class="country-data">Sub Region: <%= country.subregion %></div>
-          <div class="country-data">Capital: <%= country.capital %></div>
+          <div class="country-data single-data mb-2">Region: <%= country.region %></div>
+          <div class="country-data single-data mb-2">Sub Region: <%= country.subregion %></div>
+          <div class="country-data single-data mb-2">Capital: <%= country.capital %></div>
         </div>
         <div class="col-6">
-            <div class="country-data">Top Level Domain: <%= country.topLevelDomain %></div>
-            <div class="country-data">Currencies: <%= currencies %></div>
-            <div class="country-data">Languages: <%= languages %></div>
+          <div class="country-data single-data mb-2">
+            Top Level Domain: <%= country.topLevelDomain %>
+          </div>
+          <div class="country-data single-data mb-2">Currencies: <%= currencies %></div>
+          <div class="country-data single-data mb-2">Languages: <%= languages %></div>
+        </div>
+      </div>
+      <div class="row borders-section">
+        <div class="country-data col-3 single-data">Border Countries:</div>
+        <div class="col-9">
+          <div class="row">
+            <% for (let index = 0; index < borders.length; index++) { %>
+            <div class="border-country col-4 p-0 single-data"><%= borders[index] %></div>
+            <% } %>
+          </div>
         </div>
       </div>
     </div>
@@ -35,3 +47,5 @@
 </div>
 
 <%- include("partials/footer"); -%>
+
+<div class="border-country"></div>
