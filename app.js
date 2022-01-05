@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
     response.on("end", () => {
       holeInfo = JSON.parse(body);
       res.render("allCountries", {
-        countries: holeInfo
+        countries: holeInfo,
       });
       body = "";
     });
@@ -26,20 +26,46 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:country", (req, res) => {
-  const singleCountryUrl = "https://restcountries.com/v2/name/" + req.params.country;
-  https.get(singleCountryUrl, function(response) {
-    response.on("data", function(data){
+  const singleCountryUrl =
+    "https://restcountries.com/v2/name/" + req.params.country;
+  https.get(singleCountryUrl, function (response) {
+    response.on("data", function (data) {
       const countryData = JSON.parse(data);
+
+      var languages = " ";
+
+      if (countryData[0].languages.length === 1) {
+        languages = languages + countryData[0].languages[0].name;
+      } else {
+        var index = 0;
+        for (index; index < (countryData[0].languages.length) - 1; index++) {
+          languages = languages + countryData[0].languages[index].name + ", ";
+        }
+        languages = languages + countryData[0].languages[index].name;
+      }
+
+      var currencies = " ";
+
+      if (countryData[0].currencies.length === 1) {
+        currencies = currencies + countryData[0].languages[0].name;
+      } else {
+        var index = 0;
+        for (let index = 0; index < (countryData[0].currencies.length) - 1; index++) {
+          currencies =
+            currencies + countryData[0].currencies[index].name + ", ";
+        }
+        currencies = currencies + countryData[0].currencies[index].name;
+      }
+
       res.render("singleCountry", {
-        country: countryData[0]
+        country: countryData[0],
+        currencies: currencies,
+        languages: languages,
       });
-    })
-  })
-})
-
-
+    });
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
-
