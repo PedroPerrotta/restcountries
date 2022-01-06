@@ -13,92 +13,124 @@
       />
     </div>
     <div class="dropdown p-0 d-flex justify-content-end region-filter col-2">
-      <button class="btn btn-secondary dropdown-toggle shadow-none dropdown-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+      <button
+        class="btn btn-secondary dropdown-toggle shadow-none dropdown-button"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        data-bs-display="static"
+        aria-expanded="false"
+      >
         Filter by Region
       </button>
-      <ul class="dropdown-menu regions-list p-0" aria-labelledby="dropdownMenuButton1">
-        <li class="region-item"><a class="dropdown-item region-anchor region-top" href="#">Africa</a></li>
-        <li class="region-item"><a class="dropdown-item region-anchor" href="#">America</a></li>
-        <li class="region-item"><a class="dropdown-item region-anchor" href="#">Asia</a></li>
-        <li class="region-item"><a class="dropdown-item region-anchor" href="#">Europe</a></li>
-        <li class="region-item"><a class="dropdown-item region-anchor region-bottom" href="#">Oceania</a></li>
+      <ul
+        class="dropdown-menu regions-list p-0"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        <li class="region-item">
+          <a class="dropdown-item region-anchor region-top" href="#">Africa</a>
+        </li>
+        <li class="region-item">
+          <a class="dropdown-item region-anchor" href="#">America</a>
+        </li>
+        <li class="region-item">
+          <a class="dropdown-item region-anchor" href="#">Asia</a>
+        </li>
+        <li class="region-item">
+          <a class="dropdown-item region-anchor" href="#">Europe</a>
+        </li>
+        <li class="region-item">
+          <a class="dropdown-item region-anchor region-bottom" href="#"
+            >Oceania</a
+          >
+        </li>
       </ul>
     </div>
   </div>
 </div>
 
-<% for (let index = 0; index < 247; index = index + 4) { %>
 <div class="container-fluid">
+  <% var y = 0; %> <% for (y; y < countries.length - 4; y = y + 4) { %>
   <div class="row">
-    <div class="col mx-6 mb-6 p-0 countryBox">
+    <div class="col ms-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index].flags.png %> " />
+        <img class="flag-img" src=" <%= countries[y].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name"><%= countries[index].name %></div>
+        <div class="country-name"><%= countries[y].name %></div>
         <div class="country-data">
-          Population: <%= (countries[index].population).toLocaleString('en-US')
-          %>
+          Population: <%= (countries[y].population).toLocaleString('en-US') %>
         </div>
-        <div class="country-data">Region: <%= countries[index].region %></div>
-        <div class="country-data">Capital: <%= countries[index].capital %></div>
-      </div>
-    </div>
-    <div class="col mx-0 mb-6 p-0 countryBox">
-      <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 1].flags.png %> " />
-      </div>
-      <div class="data-div">
-        <div class="country-name"><%= countries[index + 1].name %></div>
-        <div class="country-data">
-          Population: <%= (countries[index +
-          1].population).toLocaleString('en-US') %>
-        </div>
-        <div class="country-data">
-          Region: <%= countries[index + 1].region %>
-        </div>
-        <div class="country-data">
-          Capital: <%= countries[index + 1].capital %>
-        </div>
+        <div class="country-data">Region: <%= countries[y].region %></div>
+        <div class="country-data">Capital: <%= countries[y].capital %></div>
       </div>
     </div>
     <div class="col ms-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 2].flags.png %> " />
+        <img class="flag-img" src=" <%= countries[y + 1].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name"><%= countries[index + 2].name %></div>
+        <div class="country-name"><%= countries[y + 1].name %></div>
         <div class="country-data">
-          Population: <%= (countries[index +
-          2].population).toLocaleString('en-US') %>
+          Population: <%= (countries[y + 1].population).toLocaleString('en-US')
+          %>
         </div>
-        <div class="country-data">
-          Region: <%= countries[index + 2].region %>
-        </div>
-        <div class="country-data">
-          Capital: <%= countries[index + 2].capital %>
-        </div>
+        <div class="country-data">Region: <%= countries[y + 1].region %></div>
+        <div class="country-data">Capital: <%= countries[y + 1].capital %></div>
       </div>
     </div>
-    <div class="col mx-6 mb-6 p-0 countryBox">
+    <div class="col ms-6 mb-6 p-0 countryBox">
       <div class="flag-div">
-        <img class="flag-img" src=" <%= countries[index + 3].flags.png %> " />
+        <img class="flag-img" src=" <%= countries[y + 2].flags.png %> " />
       </div>
       <div class="data-div">
-        <div class="country-name"><%= countries[index + 3].name %></div>
+        <div class="country-name"><%= countries[y + 2].name %></div>
         <div class="country-data">
-          Population: <%= (countries[index +
-          3].population).toLocaleString('en-US') %>
+          Population: <%= (countries[y + 2].population).toLocaleString('en-US')
+          %>
         </div>
+        <div class="country-data">Region: <%= countries[y + 2].region %></div>
+        <div class="country-data">Capital: <%= countries[y + 2].capital %></div>
+      </div>
+    </div>
+    <div class="col ms-6 mb-6 me-6 p-0 countryBox">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[y + 3].flags.png %> " />
+      </div>
+      <div class="data-div">
+        <div class="country-name"><%= countries[y + 3].name %></div>
         <div class="country-data">
-          Region: <%= countries[index + 3].region %>
+          Population: <%= (countries[y + 3].population).toLocaleString('en-US')
+          %>
         </div>
-        <div class="country-data">
-          Capital: <%= countries[index + 3].capital %>
-        </div>
+        <div class="country-data">Region: <%= countries[y + 3].region %></div>
+        <div class="country-data">Capital: <%= countries[y + 3].capital %></div>
       </div>
     </div>
   </div>
+  <% } %>
+
+  <div class="row">
+    <% for (y; y < countries.length; y++) { %>
+    <div class="col mb-6 ms-6 p-0 countryBox last-box">
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[y].flags.png %> " />
+      </div>
+      <div class="data-div">
+        <div class="country-name"><%= countries[y].name %></div>
+        <div class="country-data">
+          Population: <%= (countries[y].population).toLocaleString('en-US') %>
+        </div>
+        <div class="country-data">Region: <%= countries[y].region %></div>
+        <div class="country-data">Capital: <%= countries[y].capital %></div>
+      </div>
+    </div>
+    <% } %> <% for(y = 0; y < (countries.length) % 4; y++) { %> <% if((y + 1)=== (countries.length % 4)) { %>
+    <div class="col mb-6 ms-6 me-6 p-0"></div>
+    <% } else { %>
+    <div class="col mb-6 ms-6 p-0"></div>
+    <% } %> <% } %>
+  </div>
 </div>
 
-<% } %> <%- include("partials/footer"); -%>
+<%- include("partials/footer"); -%>

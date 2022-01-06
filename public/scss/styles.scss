@@ -18,6 +18,10 @@ body {
   margin-left: 65px;
 }
 
+.me-6 {
+  margin-right: 65px;
+}
+
 // STYLES TO HEADER
   .page-title {
     color: hsl(0, 0%, 100%);
@@ -27,7 +31,7 @@ body {
     margin: 10px 0;
 
     &:hover {
-      color: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 100%) ;
     }
   }
   
@@ -126,7 +130,7 @@ body {
 .countryBox {
   background-color: hsl(209, 23%, 22%);
   border-radius: 7px;
-  height: 450px;
+  // height: 450px;
 
   .flag-div {
     height: 250px;
@@ -143,6 +147,7 @@ body {
 
 .data-div,
 .single-country-information {
+  margin-bottom: 30px;
   margin-left: 30px;
   margin-top: 30px;
   color: hsl(0, 0%, 100%);
