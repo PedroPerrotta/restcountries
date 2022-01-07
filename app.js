@@ -23,10 +23,11 @@ app.get("/", (req, res) => {
       body = "";
     });
   });
-});
+})
 
-app.get("/:country", (req, res) => {
-  if (req.params.country) {
+app.get("/name/:country", (req, res) => {
+  console.log(req.params.country);
+  if (req.params.country != 0) {
     const singleCountryUrl =
       "https://restcountries.com/v3.1/name/" + req.params.country;
     https.get(singleCountryUrl, function (response) {
@@ -35,14 +36,14 @@ app.get("/:country", (req, res) => {
 
         var languages = " ";
 
-        if (countryData[0].languages.length === 1) {
+        if ((countryData[0].languages.length) === 1) {
           languages = languages + countryData[0].languages[0].name;
         } else {
           var index = 0;
           for (index; index < countryData[0].languages.length - 1; index++) {
-            languages = languages + countryData[0].languages[index].name + ", ";
+            languages = languages + countryData[0].languages[index] + ", ";
           }
-          languages = languages + countryData[0].languages[index].name;
+          languages = languages + countryData[0].languages[index];
         }
 
         var currencies = " ";
@@ -57,9 +58,9 @@ app.get("/:country", (req, res) => {
             index++
           ) {
             currencies =
-              currencies + countryData[0].currencies[index].name + ", ";
+              currencies + countryData[0].currencies[index] + ", ";
           }
-          currencies = currencies + countryData[0].currencies[index].name;
+          currencies = currencies + countryData[0].currencies[index];
         }
 
         var borders = [];
@@ -91,7 +92,7 @@ app.get("/:country", (req, res) => {
       });
     });
   }
-});
+})
 
 // app.get("/:continent", (req, res) => {
 //   if (req.params.continent) {
