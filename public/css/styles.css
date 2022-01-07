@@ -107,6 +107,7 @@ body {
 .countryBox {
   background-color: #2b3945;
   border-radius: 7px;
+  text-decoration: none;
 }
 .countryBox .flag-div {
   height: 250px;
