@@ -25,72 +25,86 @@ app.get("/", (req, res) => {
   });
 })
 
-app.get("/name/:country", (req, res) => {
-  console.log(req.params.country);
-  if (req.params.country != 0) {
-    const singleCountryUrl =
-      "https://restcountries.com/v3.1/name/" + req.params.country;
-    https.get(singleCountryUrl, function (response) {
-      response.on("data", function (data) {
-        const countryData = JSON.parse(data);
-
-        var languages = " ";
-
-        if ((countryData[0].languages.length) === 1) {
-          languages = languages + countryData[0].languages[0].name;
-        } else {
-          var index = 0;
-          for (index; index < countryData[0].languages.length - 1; index++) {
-            languages = languages + countryData[0].languages[index] + ", ";
+app.get("/name/:search", (req, res) => {
+  console.  log(req.params.search);
+  if ((req.params.search == "europe") || (req.params.search == "africa") || (req.params.search == "america") || (req.params.search == "asia") || (req.params.search == "oceania")) {
+    url = "https://restcountries.com/v3.1/region/" + req.params.continent;
+    https.get(url, function (response) {
+      response.on("data", (chunk) => (body += chunk));
+      response.on("end", () => {
+        holeInfo = JSON.parse(body);
+        res.render("countriesList", {
+          countries: holeInfo,
+        });
+        body = "";
+      });
+    });
+  } else {
+    if (req.params.search != 0) {
+      const singleCountryUrl =
+        "https://restcountries.com/v3.1/name/" + req.params.search;
+      https.get(singleCountryUrl, function (response) {
+        response.on("data", function (data) {
+          const countryData = JSON.parse(data);
+  
+          var languages = " ";
+  
+          if ((countryData[0].languages.length) === 1) {
+            languages = languages + countryData[0].languages[0].name;
+          } else {
+            var index = 0;
+            for (index; index < countryData[0].languages.length - 1; index++) {
+              languages = languages + countryData[0].languages[index] + ", ";
+            }
+            languages = languages + countryData[0].languages[index];
           }
-          languages = languages + countryData[0].languages[index];
-        }
-
-        var currencies = " ";
-
-        if (countryData[0].currencies.length === 1) {
-          currencies = currencies + countryData[0].languages[0].name;
-        } else {
-          var index = 0;
-          for (
-            let index = 0;
-            index < countryData[0].currencies.length - 1;
-            index++
-          ) {
-            currencies =
-              currencies + countryData[0].currencies[index] + ", ";
-          }
-          currencies = currencies + countryData[0].currencies[index];
-        }
-
-        var borders = [];
-
-        if (countryData[0].borders) {
-          if (countryData[0].borders.length === 1) {
-            borders[0] = countryData[0].borders[0];
+  
+          var currencies = " ";
+  
+          if (countryData[0].currencies.length === 1) {
+            currencies = currencies + countryData[0].languages[0].name;
           } else {
             var index = 0;
             for (
               let index = 0;
-              index < countryData[0].borders.length - 1;
+              index < countryData[0].currencies.length - 1;
               index++
             ) {
+              currencies =
+                currencies + countryData[0].currencies[index] + ", ";
+            }
+            currencies = currencies + countryData[0].currencies[index];
+          }
+  
+          var borders = [];
+  
+          if (countryData[0].borders) {
+            if (countryData[0].borders.length === 1) {
+              borders[0] = countryData[0].borders[0];
+            } else {
+              var index = 0;
+              for (
+                let index = 0;
+                index < countryData[0].borders.length - 1;
+                index++
+              ) {
+                borders[index] = countryData[0].borders[index];
+              }
               borders[index] = countryData[0].borders[index];
             }
-            borders[index] = countryData[0].borders[index];
+          } else {
+            borders = ["None"];
           }
-        } else {
-          borders = ["None"];
-        }
-
-        res.render("singleCountry", {
-          country: countryData[0],
-          currencies: currencies,
-          languages: languages,
-          borders: borders,
+  
+          res.render("singleCountry", {
+            country: countryData[0],
+            currencies: currencies,
+            languages: languages,
+            borders: borders,
+          });
         });
       });
-    });
+    }
   }
 })
 
