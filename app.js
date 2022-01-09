@@ -7,11 +7,14 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 let holeInfo = [];
 let body = "";
-let url = "https://restcountries.com/v3.1/all";
+let url = "";
 
 app.get("/", (req, res) => {
+  url = "https://restcountries.com/v3.1/all";
   https.get(url, function (response) {
     response.on("data", (chunk) => (body += chunk));
     response.on("end", () => {
@@ -67,7 +70,7 @@ app.get("/:search", (req, res) => {
         var currencies = " ";
 
         if (countryData[0].currencies.length === 1) {
-          currencies = currencies + countryData[0].languages[0].name;
+          currencies = currencies + countryData[0].currencies[0].[0].name;
         } else {
           var index = 0;
           for (
@@ -75,9 +78,9 @@ app.get("/:search", (req, res) => {
             index < countryData[0].currencies.length - 1;
             index++
           ) {
-            currencies = currencies + countryData[0].currencies[index] + ", ";
+            currencies = currencies + countryData[0].currencies.[index].name + ", ";
           }
-          currencies = currencies + countryData[0].currencies[index];
+          currencies = currencies + countryData[0].currencies.[index].name;
         }
 
         var borders = [];
@@ -112,18 +115,16 @@ app.get("/:search", (req, res) => {
 });
 
 app.post("/name", (req, res) => {
-  console.log(req.body);
-  // url = "https://restcountries.com/v3.1/region/" + req.body.cityName;
-  // https.get(url, function (response) {
-  //   response.on("data", (chunk) => (body += chunk));
-  //   response.on("end", () => {
-  //     holeInfo = JSON.parse(body);
-  //     res.render("countriesList", {
-  //       countries: holeInfo,
-  //     });
-  //     body = "";
-  //   });
-  // });
+  url = "https://restcountries.com/v3.1/name/" + req.body.countryName;
+  https.get(url, function (response) {
+    response.on("data", function (data) {
+      const countryData = JSON.parse(data);
+      res.render("countriesList", {
+        countries: countryData
+      });
+      url = "";
+    });
+  });
 });
 
 app.listen(3000, () => {

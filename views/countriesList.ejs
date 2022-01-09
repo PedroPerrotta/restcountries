@@ -20,7 +20,7 @@
         placeholder="Search for a country..."
         onkeyup="clickEvent()"
       />
-      <input class="inputBtn" type="submit" id="myBtn" />
+      <button type="submit" class="inputBtn" id="myBtn">Search</button>
     </form>
     <div class="dropdown p-0 d-flex justify-content-end region-filter col-2">
       <button
@@ -135,7 +135,25 @@
   <% } %>
 
   <div class="row">
-    <% for (y; y < countries.length; y++) { %>
+    <% for (y; y < countries.length; y++) { %> <% if ((y + 1) ===
+    countries.length) { %>
+    <a
+      class="col mb-6 ms-6 p-0 me-6 countryBox last-box"
+      href="/<%= countries[y].name.common %> "
+    >
+      <div class="flag-div">
+        <img class="flag-img" src=" <%= countries[y].flags.png %> " />
+      </div>
+      <div class="data-div">
+        <div class="country-name"><%= countries[y].name.common %></div>
+        <div class="country-data">
+          Population: <%= (countries[y].population).toLocaleString('en-US') %>
+        </div>
+        <div class="country-data">Region: <%= countries[y].region %></div>
+        <div class="country-data">Capital: <%= countries[y].capital %></div>
+      </div>
+    </a>
+    <% } else { %>
     <a
       class="col mb-6 ms-6 p-0 countryBox last-box"
       href="/<%= countries[y].name.common %> "
@@ -152,12 +170,13 @@
         <div class="country-data">Capital: <%= countries[y].capital %></div>
       </div>
     </a>
-    <% } %> <% for(y = 0; y < (countries.length) % 4; y++) { %> <% if((y + 1)===
-    (countries.length % 4)) { %>
+    <% } %> <% } %> <% if ((countries.length % 4) != 0) { %> <% for(y = 0; y <
+    (4 - ((countries.length) % 4)); y++) { %> <% if((y + 1)=== (countries.length
+    % 4)) { %>
     <div class="col mb-6 ms-6 me-6 p-0"></div>
     <% } else { %>
     <div class="col mb-6 ms-6 p-0"></div>
-    <% } %> <% } %>
+    <% } %> <% } %> <% } %>
   </div>
 </div>
 

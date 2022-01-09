@@ -71,6 +71,15 @@ body {
 .country-filter .country-input .country-selector::placeholder {
   color: white;
 }
+.country-filter .country-input .inputBtn {
+  background-color: #2b3945;
+  color: white;
+  height: 45px;
+  border-style: none;
+}
+.country-filter .country-input:focus {
+  background-color: #2b3945;
+}
 .country-filter .dropdown-button {
   background-color: #2b3945;
   border-style: none;
@@ -102,10 +111,6 @@ body {
 .country-filter .regions-list .region-bottom {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-}
-
-.inputBtn {
-  display: none;
 }
 
 .countryBox {
@@ -155,9 +160,12 @@ body {
   padding-right: 5px;
 }
 
-.country-flag {
-  width: 600px;
-  height: 500px;
+.single-country-flag {
+  padding-right: 100px;
+}
+.single-country-flag .country-flag {
+  width: 100%;
+  height: 100%;
 }
 
 .single-country-information .country-name {

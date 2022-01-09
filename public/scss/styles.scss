@@ -23,34 +23,34 @@ body {
 }
 
 // STYLES TO HEADER
-  .page-title {
-    color: hsl(0, 0%, 100%);
-    display: block;
-    font-size: 25px;
-    font-weight: 600;
-    margin: 10px 0;
+.page-title {
+  color: hsl(0, 0%, 100%);
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0;
 
-    &:hover {
-      color: hsl(0, 0%, 100%) ;
-    }
-  }
-  
-  .top-bar {
-    background-color: hsl(209, 23%, 22%);
-    box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
-  }
-  
-  .theme-mode {
+  &:hover {
     color: hsl(0, 0%, 100%);
-    font-size: 15px;
-    font-weight: 600;
-    margin-right: 3.75rem;
-    
-    .theme-p {
-      margin: 0 0 0 5px;
-      display: inline;
-    }
   }
+}
+
+.top-bar {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+}
+
+.theme-mode {
+  color: hsl(0, 0%, 100%);
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 3.75rem;
+
+  .theme-p {
+    margin: 0 0 0 5px;
+    display: inline;
+  }
+}
 
 // STYLES TO FILTERS
 
@@ -80,6 +80,17 @@ body {
       &::placeholder {
         color: white;
       }
+    }
+
+    .inputBtn {
+      background-color: hsl(209, 23%, 22%);
+      color: white;
+      height: 45px;
+      border-style: none;
+    }
+
+    &:focus {
+      background-color: hsl(209, 23%, 22%);
     }
   }
 
@@ -123,10 +134,6 @@ body {
       border-bottom-right-radius: 7px;
     }
   }
-}
-
-.inputBtn {
-  display: none;
 }
 
 // STYLES TO COUNTRY BOXES
@@ -175,17 +182,21 @@ body {
   box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
   color: white;
   padding-right: 30px;
-  max-width: 160px; 
-  
+  max-width: 160px;
+
   .left-arrow-icon {
     padding-left: 5px;
     padding-right: 5px;
   }
 }
 
-.country-flag {
-  width: 600px;
-  height: 500px;
+.single-country-flag {
+  padding-right: 100px;
+
+  .country-flag {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .single-country-information {
@@ -210,5 +221,5 @@ body {
   padding-right: 30px;
   margin-right: 10px;
   max-width: 160px;
-  text-align: center; 
+  text-align: center;
 }
