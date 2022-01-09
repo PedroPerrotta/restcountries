@@ -1,17 +1,27 @@
 <%- include("partials/header"); -%>
 
+<script>
+  function clickEvent(event) {
+    if (event.keyCode === 13) {
+      document.getElementById("myBtn").click();
+    }
+  }
+</script>
+
 <div class="container-fluid mb-5 p-0">
   <div class="row country-filter mx-6 mb-4">
-    <div class="country-input col-10 p-0">
+    <form action="/name" method="post" class="country-input col-10 p-0">
       <i class="fas fa-search magnifying-icon"></i>
       <input
         class="country-selector p-0"
         type="text"
-        name=""
-        id=""
+        name="countryName"
+        id="countryInput"
         placeholder="Search for a country..."
+        onkeyup="clickEvent()"
       />
-    </div>
+      <input class="inputBtn" type="submit" id="myBtn" />
+    </form>
     <div class="dropdown p-0 d-flex justify-content-end region-filter col-2">
       <button
         class="btn btn-secondary dropdown-toggle shadow-none dropdown-button"
@@ -28,19 +38,21 @@
         aria-labelledby="dropdownMenuButton1"
       >
         <li class="region-item">
-          <a class="dropdown-item region-anchor region-top" href="#">Africa</a>
+          <a class="dropdown-item region-anchor region-top" href="/africa"
+            >Africa</a
+          >
         </li>
         <li class="region-item">
-          <a class="dropdown-item region-anchor" href="#">America</a>
+          <a class="dropdown-item region-anchor" href="/america">America</a>
         </li>
         <li class="region-item">
-          <a class="dropdown-item region-anchor" href="#">Asia</a>
+          <a class="dropdown-item region-anchor" href="/asia">Asia</a>
         </li>
         <li class="region-item">
-          <a class="dropdown-item region-anchor" href="#">Europe</a>
+          <a class="dropdown-item region-anchor" href="/europe">Europe</a>
         </li>
         <li class="region-item">
-          <a class="dropdown-item region-anchor region-bottom" href="#"
+          <a class="dropdown-item region-anchor region-bottom" href="/oceania"
             >Oceania</a
           >
         </li>
@@ -52,7 +64,10 @@
 <div class="container-fluid">
   <% var y = 0; %> <% for (y; y < countries.length - 4; y = y + 4) { %>
   <div class="row">
-    <a class="col ms-6 mb-6 p-0 countryBox" href="/<%= countries[y].name.common %> ">
+    <a
+      class="col ms-6 mb-6 p-0 countryBox"
+      href="/<%= countries[y].name.common %> "
+    >
       <div class="flag-div">
         <img class="flag-img" src=" <%= countries[y].flags.png %> " />
       </div>

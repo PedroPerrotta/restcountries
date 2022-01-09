@@ -104,6 +104,10 @@ body {
   border-bottom-right-radius: 7px;
 }
 
+.inputBtn {
+  display: none;
+}
+
 .countryBox {
   background-color: #2b3945;
   border-radius: 7px;
