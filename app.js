@@ -58,62 +58,52 @@ app.get("/:search", (req, res) => {
       });
       response.on("end", () => {
         var languages = " ";
-        // console.log(countryData);
-        // if (countryData[0].languages.length === 1) {
-        //   languages = languages + countryData[0].languages[0].name;
-        // } else {
-        //   var index = 0;
-        //   for (index; index < countryData[0].languages.length - 1; index++) {
-        //     languages = languages + countryData[0].languages[index] + ", ";
-        //   }
-        //   languages = languages + countryData[0].languages[index];
-        // }
-
-        // if (countryData[0].currencies.length === 1) {
-        //   currencies = currencies + countryData[0].currencies[0];
-        // } else {
-        //   var index = 0;
-        //   for (
-        //     let index = 0;
-        //     index < countryData[0].currencies.length - 1;
-        //     index++
-        //   ) {
-        //     currencies = currencies + countryData[0].currencies[index] + ", ";
-        //   }
-        //   currencies = currencies + countryData[0].currencies[index];
-        // }
-
-        var currencies = countryData[0].currencies;
-        var currencie = "";
-        for (let y; y < currencies.length; y++) {
-          if ((y + 1) === currencies.length) {
-            currencie = currencie + currencies[y].name;
-          } else {
-            currencie = currencie + currencies[y].name + ", ";
+        if (countryData[0].languages.length === 1) {
+          languages = languages + countryData[0].languages[0].name;
+        } else {
+          var index = 0;
+          for (index; index < countryData[0].languages.length - 1; index++) {
+            languages = languages + countryData[0].languages[index] + ", ";
           }
+          languages = languages + countryData[0].languages[index];
         }
-        
-        console.log(currencie);
+
+        var currencies =  " ";
+
+        if (countryData[0].currencies.length === 1) {
+          currencies = currencies + countryData[0].currencies[0].name;
+        } else {
+          var index = 0;
+          console.log(countryData[0].currencies);
+          for (
+            let index = 0;
+            index < countryData[0].currencies.length - 1;
+            index++
+          ) {
+            currencies = currencies + countryData[0].currencies[index].name + ", ";
+          }
+          currencies = currencies + countryData[0].currencies[index].name;
+        }
 
         var borders = [];
 
-        // if (countryData[0].borders) {
-        //   if (countryData[0].borders.length === 1) {
-        //     borders[0] = countryData[0].borders[0];
-        //   } else {
-        //     var index = 0;
-        //     for (
-        //       let index = 0;
-        //       index < countryData[0].borders.length - 1;
-        //       index++
-        //     ) {
-        //       borders[index] = countryData[0].borders[index];
-        //     }
-        //     borders[index] = countryData[0].borders[index];
-        //   }
-        // } else {
-        //   borders = ["None"];
-        // }
+        if (countryData[0].borders.length != 0) {
+          if (countryData[0].borders.length === 1) {
+            borders[0] = countryData[0].borders[0];
+          } else {
+            var index = 0;
+            for (
+              let index = 0;
+              index < countryData[0].borders.length - 1;
+              index++
+            ) {
+              borders[index] = countryData[0].borders[index];
+            }
+            borders[index] = countryData[0].borders[index];
+          }
+        } else {
+          borders = ["None"];
+        }
 
         res.render("singleCountry", {
           country: countryData[0],
