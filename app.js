@@ -59,35 +59,35 @@ app.get("/:search", (req, res) => {
           countryData = JSON.parse(data);
         });
         response.on("end", () => {
+          
           var languages = " ";
-          if (countryData[0].languages.length === 1) {
-            languages = languages + countryData[0].languages[0].name;
+          if ((Object.keys(countryData[0].languages)).length === 1) {
+            languages = languages + Object.values(countryData[0].languages)[0];
           } else {
             var index = 0;
-            for (index; index < countryData[0].languages.length - 1; index++) {
-              languages = languages + countryData[0].languages[index] + ", ";
+            for (index; index < ((Object.keys(countryData[0].languages)).length - 1); index++) {
+              languages = Object.values(countryData[0].languages)[index] + ", ";
             }
-            languages = languages + countryData[0].languages[index];
+            languages = languages + Object.values(countryData[0].languages)[index];
           }
 
-          var currencies = " ";
-          if (countryData[0].currencies.length === 1) {
-            currencies = currencies + countryData[0].currencies[0].name;
+          let currencies = "";
+          let arrayCurrencies = Object.values(countryData[0].currencies);
+
+          if (Object.keys(countryData[0].currencies).length === 1) {
+            currencies = currencies + arrayCurrencies[0].name;
           } else {
             var index = 0;
             for (
               let index = 0;
-              index < countryData[0].currencies.length - 1;
+              index < (Object.keys(countryData[0].currencies).length - 1);
               index++
             ) {
               currencies =
-                currencies + countryData[0].currencies[index].name + ", ";
+                currencies + arrayCurrencies[index].name + ", ";
             }
-            currencies = currencies + countryData[0].currencies[index].name;
+            currencies = currencies + arrayCurrencies[index + 1].name;
           }
-
-          let currencies = countryData[0].currencies;
-          console.log(Object.values(currencies)[0]);
 
           var borders = [];
 
@@ -111,8 +111,7 @@ app.get("/:search", (req, res) => {
 
           res.render("singleCountry", {
             country: countryData[0],
-            //currencies: currencies,
-            currencies: "",
+            currencies: currencies,
             languages: languages,
             borders: borders,
           });
