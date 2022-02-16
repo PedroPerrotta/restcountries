@@ -55,7 +55,7 @@ body {
   .country-input {
     .magnifying-icon {
       height: 45px;
-      width: 30px;
+      width: 6%;
       vertical-align: bottom;
 
       &::before {
@@ -69,7 +69,7 @@ body {
       border-style: none;
       height: 45px;
       margin-left: -4px;
-      width: 87%;
+      width: 76%;
 
       &:focus {
         outline: none;
@@ -77,8 +77,9 @@ body {
     }
 
     .inputBtn {
-      height: 45px;
       border-style: none;
+      height: 45px;
+      width: 16%;
     }
 
     &:focus {
@@ -122,7 +123,6 @@ body {
   text-decoration: none;
 
   .flag-div {
-    height: 250px;
     width: 100%;
 
     .flag-img {
@@ -376,5 +376,42 @@ body {
     background-color: hsl(0, 0%, 100%);
     box-shadow: 1px 1px 3px 3px #eddcdc;
     color: hsl(200, 15%, 8%);
+  }
+}
+
+@media (max-width: 992px) {
+  .ms-lg-6 {
+    margin-left: 0;
+  }
+
+  .country-filter {
+    .region-filter {
+      justify-content: flex-start;
+      margin-top: 40px;
+    }
+  }
+
+  .countryBox {
+    .flag-div {
+      height: 450px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .ms-lg-6 {
+    margin-left: 65px;
+  }
+  
+  .country-filter {
+    .region-filter {
+      justify-content: flex-end;
+    }
+  }
+
+  .countryBox {
+    .flag-div {
+      height: 250px;
+    }
   }
 }
