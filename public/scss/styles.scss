@@ -1,7 +1,6 @@
 // GENERAL STYLES
 
 body {
-  background-color: hsl(207, 26%, 17%);
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -24,7 +23,6 @@ body {
 
 // STYLES TO HEADER
 .page-title {
-  color: hsl(0, 0%, 100%);
   display: block;
   font-size: 25px;
   font-weight: 600;
@@ -36,12 +34,10 @@ body {
 }
 
 .top-bar {
-  background-color: hsl(209, 23%, 22%);
-  box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  //box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
 }
 
 .theme-mode {
-  color: hsl(0, 0%, 100%);
   font-size: 15px;
   font-weight: 600;
   margin-right: 3.75rem;
@@ -222,4 +218,41 @@ body {
   margin-right: 10px;
   max-width: 160px;
   text-align: center;
+}
+
+// Themes styles
+
+.dark-theme {
+  background-color: hsl(207, 26%, 17%);
+
+  .page-title {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .theme-mode {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .top-bar {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  }
+}
+
+.light-theme {
+  background-color: hsl(0, 0%, 98%);
+
+  .page-title {
+    color: hsl(200, 15%, 8%);
+    font-weight: 700;
+  }
+
+  .theme-mode {
+    color: hsl(200, 15%, 8%);
+  }
+
+  .top-bar {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 0px 1.5px 1.5px hsl(0, 0%, 98%);
+  }
 }
