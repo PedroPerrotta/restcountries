@@ -33,10 +33,6 @@ body {
   }
 }
 
-.top-bar {
-  //box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
-}
-
 .theme-mode {
   font-size: 15px;
   font-weight: 600;
@@ -46,41 +42,41 @@ body {
     margin: 0 0 0 5px;
     display: inline;
   }
+
+  .theme-mode-item {
+    background-color: inherit;
+    border: none;
+  }
 }
 
 // STYLES TO FILTERS
 
 .country-filter {
   .country-input {
-    color: white;
     .magnifying-icon {
-      background-color: hsl(209, 23%, 22%);
       height: 45px;
-      padding: 15px 0 0 10px;
+      width: 30px;
       vertical-align: bottom;
-      width: 45px;
+
+      &::before {
+        left: 5px;
+        position: relative;
+        top: 13px;
+      }
     }
 
     .country-selector {
-      background-color: hsl(209, 23%, 22%);
       border-style: none;
-      color: white;
       height: 45px;
       margin-left: -4px;
-      width: 50%;
+      width: 87%;
 
       &:focus {
         outline: none;
       }
-
-      &::placeholder {
-        color: white;
-      }
     }
 
     .inputBtn {
-      background-color: hsl(209, 23%, 22%);
-      color: white;
       height: 45px;
       border-style: none;
     }
@@ -91,34 +87,21 @@ body {
   }
 
   .dropdown-button {
-    background-color: hsl(209, 23%, 22%);
     border-style: none;
     padding-right: 30px;
     max-width: 160px;
   }
 
   .dropdown-arrow {
-    background-color: hsl(209, 23%, 22%);
     border-style: none;
     max-width: 40px;
   }
 
   .regions-list {
     border-radius: 7px;
-    background-color: hsl(209, 23%, 22%);
     inset: 0 auto auto 0;
     margin-top: 5px;
     transform: translate(135px, 47px);
-
-    .region-item {
-      .region-anchor {
-        color: white;
-
-        &:hover {
-          color: black;
-        }
-      }
-    }
 
     .region-top {
       border-top-left-radius: 7px;
@@ -135,7 +118,6 @@ body {
 // STYLES TO COUNTRY BOXES
 
 .countryBox {
-  background-color: hsl(209, 23%, 22%);
   border-radius: 7px;
   text-decoration: none;
 
@@ -157,7 +139,6 @@ body {
   margin-bottom: 30px;
   margin-left: 30px;
   margin-top: 30px;
-  color: hsl(0, 0%, 100%);
 
   .country-name {
     font-size: 22px;
@@ -173,10 +154,7 @@ body {
 // STYLES TO SINGLE COUNTRY PAGE
 
 .back-button {
-  background-color: hsl(209, 23%, 22%);
   border-style: none;
-  box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
-  color: white;
   padding-right: 30px;
   max-width: 160px;
 
@@ -231,11 +209,81 @@ body {
 
   .theme-mode {
     color: hsl(0, 0%, 100%);
+
+    .theme-mode-item {
+      color: hsl(0, 0%, 100%);
+    }
   }
 
   .top-bar {
     background-color: hsl(209, 23%, 22%);
     box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+  }
+
+  .country-filter {
+    .country-input {
+      color: white;
+      .magnifying-icon {
+        background-color: hsl(209, 23%, 22%);
+      }
+
+      .inputBtn {
+        background-color: hsl(209, 23%, 22%);
+        color: white;
+      }
+
+      .country-selector {
+        background-color: hsl(209, 23%, 22%);
+        color: white;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+
+    .dropdown-button {
+      background-color: hsl(209, 23%, 22%);
+    }
+
+    .dropdown-arrow {
+      background-color: hsl(209, 23%, 22%);
+    }
+
+    .regions-list {
+      background-color: hsl(209, 23%, 22%);
+
+      .region-item {
+        .region-anchor {
+          color: white;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .countryBox {
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  .data-div,
+  .single-country-information {
+    color: hsl(0, 0%, 100%)
+  }
+
+  .back-button {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+    color: white;
+  }
+
+  .border-country {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 1.5px 1.5px hsl(210, 26%, 14%);
+    color: white;
   }
 }
 
@@ -249,10 +297,84 @@ body {
 
   .theme-mode {
     color: hsl(200, 15%, 8%);
+
+    .theme-mode-item {
+      color: hsl(200, 15%, 8%);
+    }
   }
 
   .top-bar {
     background-color: hsl(0, 0%, 100%);
-    box-shadow: 0px 0px 1.5px 1.5px hsl(0, 0%, 98%);
+    box-shadow: 0px 0px 3px 3px #eddcdc;
+  }
+
+  .country-filter {
+    .country-input {
+      color: hsl(200, 15%, 8%);
+      box-shadow: 1px 1px 3px 3px #eddcdc;
+
+      .magnifying-icon {
+        background-color: hsl(0, 0%, 100%);
+      }
+
+      .inputBtn {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(200, 15%, 8%);
+      }
+
+      .country-selector {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(200, 15%, 8%);
+
+        &::placeholder {
+          color: hsl(200, 15%, 8%);
+        }
+      }
+    }
+
+    .dropdown-button {
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(200, 15%, 8%);
+
+      &::after {
+        color: hsl(200, 15%, 8%);
+      }
+    }
+
+    .regions-list {
+      background-color: hsl(0, 0%, 100%);
+
+      .region-item {
+        .region-anchor {
+          color: hsl(200, 15%, 8%);
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .countryBox {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 1px 1px 3px 3px #eddcdc;
+  }
+
+  .data-div,
+  .single-country-information {
+    color: hsl(200, 15%, 8%);
+  }
+
+  .back-button {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 1px 1px 3px 3px #eddcdc;
+    color: hsl(200, 15%, 8%);
+  }
+
+  .border-country {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 1px 1px 3px 3px #eddcdc;
+    color: hsl(200, 15%, 8%);
   }
 }
