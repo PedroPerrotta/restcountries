@@ -1,0 +1,214 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.mx-6 {
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.mb-6 {
+  margin-bottom: 65px;
+}
+
+.ms-6 {
+  margin-left: 65px;
+}
+
+.me-6 {
+  margin-right: 65px;
+}
+
+.page-title {
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.page-title:hover {
+  color: white;
+}
+
+.theme-mode {
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 3.75rem;
+}
+.theme-mode .theme-p {
+  margin: 0 0 0 5px;
+  display: inline;
+}
+
+.country-filter .country-input {
+  color: white;
+}
+.country-filter .country-input .magnifying-icon {
+  background-color: #2b3945;
+  height: 45px;
+  padding: 15px 0 0 10px;
+  vertical-align: bottom;
+  width: 45px;
+}
+.country-filter .country-input .country-selector {
+  background-color: #2b3945;
+  border-style: none;
+  color: white;
+  height: 45px;
+  margin-left: -4px;
+  width: 50%;
+}
+.country-filter .country-input .country-selector:focus {
+  outline: none;
+}
+.country-filter .country-input .country-selector::placeholder {
+  color: white;
+}
+.country-filter .country-input .inputBtn {
+  background-color: #2b3945;
+  color: white;
+  height: 45px;
+  border-style: none;
+}
+.country-filter .country-input:focus {
+  background-color: #2b3945;
+}
+.country-filter .dropdown-button {
+  background-color: #2b3945;
+  border-style: none;
+  padding-right: 30px;
+  max-width: 160px;
+}
+.country-filter .dropdown-arrow {
+  background-color: #2b3945;
+  border-style: none;
+  max-width: 40px;
+}
+.country-filter .regions-list {
+  border-radius: 7px;
+  background-color: #2b3945;
+  inset: 0 auto auto 0;
+  margin-top: 5px;
+  transform: translate(135px, 47px);
+}
+.country-filter .regions-list .region-item .region-anchor {
+  color: white;
+}
+.country-filter .regions-list .region-item .region-anchor:hover {
+  color: black;
+}
+.country-filter .regions-list .region-top {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.country-filter .regions-list .region-bottom {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.countryBox {
+  background-color: #2b3945;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.countryBox .flag-div {
+  height: 250px;
+  width: 100%;
+}
+.countryBox .flag-div .flag-img {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 100%;
+  width: 100%;
+}
+
+.data-div,
+.single-country-information {
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
+  color: white;
+}
+.data-div .country-name,
+.single-country-information .country-name {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.data-div .country-data,
+.single-country-information .country-data {
+  font-size: 17px;
+}
+
+.back-button {
+  background-color: #2b3945;
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+  color: white;
+  padding-right: 30px;
+  max-width: 160px;
+}
+.back-button .left-arrow-icon {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.single-country-flag {
+  padding-right: 100px;
+}
+.single-country-flag .country-flag {
+  width: 100%;
+  height: 100%;
+}
+
+.single-country-information .country-name {
+  font-size: 30px;
+}
+.single-country-information .single-data {
+  font-weight: 600;
+}
+
+.borders-section {
+  margin-top: 100px;
+}
+
+.border-country {
+  background-color: #2b3945;
+  border-style: none;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+  color: white;
+  padding-right: 30px;
+  margin-right: 10px;
+  max-width: 160px;
+  text-align: center;
+}
+
+.dark-theme {
+  background-color: #202c37;
+}
+.dark-theme .page-title {
+  color: white;
+}
+.dark-theme .theme-mode {
+  color: white;
+}
+.dark-theme .top-bar {
+  background-color: #2b3945;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+}
+
+.light-theme {
+  background-color: #fafafa;
+}
+.light-theme .page-title {
+  color: #111517;
+  font-weight: 700;
+}
+.light-theme .theme-mode {
+  color: #111517;
+}
+.light-theme .top-bar {
+  background-color: white;
+  box-shadow: 0px 0px 1.5px 1.5px #1a242d;
+}
+
+/*# sourceMappingURL=styles.css.map */
