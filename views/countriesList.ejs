@@ -10,7 +10,7 @@
 
 <div class="container-fluid mb-5 p-0">
   <div class="row country-filter mx-6 mb-4">
-    <form action="/name" method="post" class="country-input col-10 p-0">
+    <form action="/name" method="post" class="country-input col-12 col-lg-5 p-0">
       <i class="fas fa-search magnifying-icon"></i>
       <input
         class="country-selector p-0"
@@ -22,7 +22,8 @@
       />
       <button type="submit" class="inputBtn" id="myBtn">Search</button>
     </form>
-    <div class="dropdown p-0 d-flex justify-content-end region-filter col-2">
+    <div class="col-5"></div>
+    <div class="dropdown p-0 d-flex region-filter col-12 col-lg-2">
       <button
         class="btn btn-secondary dropdown-toggle shadow-none dropdown-button"
         type="button"
@@ -61,11 +62,11 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
   <% var y = 0; %> <% for (y; y < countries.length - 4; y = y + 4) { %>
-  <div class="row">
+  <div class="row mx-6">
     <a
-      class="col ms-6 mb-6 p-0 countryBox"
+      class="col-lg mb-6 p-0 countryBox"
       href="/<%= countries[y].name.common %> "
     >
       <div class="flag-div">
@@ -81,7 +82,7 @@
       </div>
     </a>
     <a
-      class="col ms-6 mb-6 p-0 countryBox"
+      class="col-lg ms-lg-6 mb-6 p-0 countryBox"
       href="/<%= countries[y + 1].name.common %> "
     >
       <div class="flag-div">
@@ -98,7 +99,7 @@
       </div>
     </a>
     <a
-      class="col ms-6 mb-6 p-0 countryBox"
+      class="col-lg ms-lg-6 mb-6 p-0 countryBox"
       href="/<%= countries[y + 2].name.common %> "
     >
       <div class="flag-div">
@@ -115,7 +116,7 @@
       </div>
     </a>
     <a
-      class="col ms-6 mb-6 me-6 p-0 countryBox"
+      class="col-lg ms-lg-6 mb-6 p-0 countryBox"
       href="/<%= countries[y + 3].name.common %> "
     >
       <div class="flag-div">
@@ -134,11 +135,11 @@
   </div>
   <% } %>
 
-  <div class="row">
+  <div class="row mx-6">
     <% for (y; y < countries.length; y++) { %> <% if ((y + 1) ===
     countries.length) { %>
     <a
-      class="col mb-6 ms-6 p-0 me-6 countryBox last-box"
+      class="col mb-6 p-0 me-6 countryBox last-box"
       href="/<%= countries[y].name.common %> "
     >
       <div class="flag-div">
