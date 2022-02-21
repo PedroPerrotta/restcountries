@@ -12,10 +12,12 @@
             document.getElementById("main-page").classList.add("light-theme");
             document.getElementById("main-page").classList.remove("dark-theme");
             document.getElementById('theme-text').innerHTML = 'Light Mode';
+            appearance = "light-theme";
         } else {
             document.getElementById("main-page").classList.add("dark-theme");
             document.getElementById("main-page").classList.remove("light-theme");
             document.getElementById('theme-text').innerHTML = 'Dark Mode';
+            appearance = "dark-theme";
         }
     })
 </script>

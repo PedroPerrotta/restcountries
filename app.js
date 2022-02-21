@@ -14,6 +14,7 @@ let body = "";
 let url = "";
 let countryData = [];
 let search = "";
+var appearance = 'dark-theme';
 
 app.get("/", (req, res) => {
   url = "https://restcountries.com/v3.1/all";
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
       holeInfo = JSON.parse(body);
       res.render("countriesList", {
         countries: holeInfo,
+        theme: appearance,
       });
       body = "";
     });
@@ -46,6 +48,7 @@ app.get("/:search", (req, res) => {
           holeInfo = JSON.parse(body);
           res.render("countriesList", {
             countries: holeInfo,
+            theme: appearance,
           });
 
           body = "";
@@ -114,6 +117,7 @@ app.get("/:search", (req, res) => {
             currencies: currencies,
             languages: languages,
             borders: borders,
+            theme: appearance,
           });
         });
       });
@@ -128,6 +132,7 @@ app.post("/name", (req, res) => {
       const countryData = JSON.parse(data);
       res.render("countriesList", {
         countries: countryData,
+        theme: appearance,
       });
       url = "";
     });
