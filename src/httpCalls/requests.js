@@ -18,7 +18,17 @@ const getCountry = async (country) => {
     }
 }
 
+const getContinentCountriesList = async (continent) => {
+    try {
+        const response = await axios.get(`https://restcountries.com/v3.1/region/${continent}`)
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}
+
 export {
     getAllCountries,
-    getCountry
+    getCountry,
+    getContinentCountriesList,
 };

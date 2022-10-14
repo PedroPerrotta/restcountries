@@ -11,7 +11,8 @@ const SingleCountry = () => {
 
   const getCountryInfo = async () => {
     response = await getCountry(country);
-    // console.log(response);
+
+    console.log(response[0]);
 
     let lang = response[0].languages;
 
@@ -31,7 +32,6 @@ const SingleCountry = () => {
 
     let brds = response[0].borders;
     let borders = [<div className="borders mx-2 px-3 py-1">None Borders</div>];
-    console.log(borders);
 
     if (brds) {
       for (let [index, value] of Object.entries(brds)) {

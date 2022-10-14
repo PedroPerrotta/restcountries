@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const CountryCard = (props) => {
   return (
     <div className="single-country-list-container col-3 px-5 py-3">
-      <div className="country-list-card" to={`/${props.name}`}>
-        <Link className="country-link" to={`/name/${props.name}`}>
+      <div className="shadow country-list-card" to={`/${props.name}`}>
+        <Link className="country-link" to={`/country/${props.name}`}>
           <img
             className="all-countries-flag mb-4"
             src={props.flag}

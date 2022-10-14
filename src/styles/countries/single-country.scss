@@ -28,3 +28,13 @@
         display: inline-block;
     }
 }
+
+.light {
+    .single-country-info-container {
+        color: $dark-black;
+
+        .borders {
+            background-color: $white;
+        }
+    }
+}

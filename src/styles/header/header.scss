@@ -1,19 +1,38 @@
 .header-container {
-    background-color: $light-blue;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    color: $white;
+  background-color: $light-blue;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: $white;
 
-    .title {
-        display: inline-block;
-        font-size: 30px;
-        font-weight: 300;
+  .title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  .theme-mode {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    float: right;
+
+    .header-image {
+      color: $white;
     }
+  }
+}
+
+.light {
+  .header-container {
+    background-color: $light-gray;
+    color: $dark-black;
 
     .theme-mode {
-        float: right;
-        
-        .header-image {
-            color: $white;
-        }
+        color: $dark-black;
     }
+
+    .moon-icon {
+      color: $dark-black;
+      font-weight: 200;
+    }
+  }
 }

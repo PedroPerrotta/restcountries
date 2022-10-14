@@ -35,3 +35,25 @@
     }
 
 }
+
+.not-found {
+    color: $white;
+    text-align: center;
+    font-size: 48px;
+}
+
+.light {
+    .single-country-list-container {
+        .country-list-card {
+            background-color: $white;
+        }
+
+        .country-link {
+            color: $dark-black;
+        }
+    }
+
+    .shadow {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    }
+}

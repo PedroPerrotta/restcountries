@@ -16,12 +16,17 @@
     &:focus {
       outline: none;
     }
+  }
 
-    .filter-input {
-      background-color: $light-blue;
-      display: inline-block;
-      padding: 0;
-    }
+  .filter-row {
+    padding-left: 12px;
+  }
+  
+  .filter-input {
+    background-color: $light-blue;
+    border-radius: 5px;
+    height: 50px;
+    padding: 0;
   }
 
   .regions {
@@ -49,5 +54,42 @@
     &.back-button {
       background-color: $light-blue;
     }
+  }
+
+  .magnifying-icon {
+    background-color: $light-blue;
+    color: $white;
+  }
+}
+
+.light {
+  .filter-container {
+    input[type="text"] {
+      background-color: $white;
+      color: $dark-black;
+  
+      &::placeholder {
+        color: $dark-black;
+      }
+    }
+
+    .back-button {
+      background-color: $white;
+      color: $dark-black;
+    }
+  }
+
+  .filter-input {
+    background-color: $white;
+  }
+
+  .regions {
+    background-color: $white;
+    color: $dark-black;
+  }
+
+  .magnifying-icon {
+    background-color: $white;
+    color: $dark-black;
   }
 }

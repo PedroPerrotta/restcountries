@@ -18,3 +18,11 @@ body {
         }
     }
 }
+
+body {
+    &.light {
+        a {
+            color: $dark-black;
+        }
+    }
+}
