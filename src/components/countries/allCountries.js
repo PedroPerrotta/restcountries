@@ -5,6 +5,7 @@ import Header from "../headers/header";
 import Filter from "../filter/filter";
 import FilterContext from "../../context/filterContext";
 import { useParams } from "react-router-dom";
+import LoadingSpinner from "../spinner/spinner";
 
 const AllCountries = (props) => {
   const [countries, setCountries] = useState([]);
@@ -13,15 +14,20 @@ const AllCountries = (props) => {
   const [allCountries, setAllCountries] = useState();
   const filterCtx = useContext(FilterContext);
   const params = useParams();
+  const [isLoading, setIsLoading] = useState(false);
 
   const getCountries = async () => {
+    setIsLoading(true)
     response = await getAllCountries();
     setCountries(response);
+    setIsLoading(false);
   };
 
   const getContinentCountries = async () => {
+    setIsLoading(true);
     response = await getContinentCountriesList(params.continent);
     setCountries(response);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -119,11 +125,12 @@ const AllCountries = (props) => {
     <>
       <Header />
       <Filter from={"all"} />
-      <div className="container-fluid mt-5 px-0">
+      {isLoading && <LoadingSpinner />}
+      {!isLoading && <div className="container-fluid mt-5 px-0">
         {filteredList
           ? filteredList
           : allCountries}
-      </div>
+      </div>}
     </>
   );
 };

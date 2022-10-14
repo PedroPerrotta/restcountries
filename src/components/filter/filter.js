@@ -24,7 +24,7 @@ const Filter = (props) => {
       <div className="filter-container mx-5 mt-5">
         <div className="row filter-row">
           <div className="col-5 filter-input shadow">
-          <i class='fas fa-search me-1 magnifying-icon ps-2'></i>
+          <i className='fas fa-search me-1 magnifying-icon ps-2'></i>
             <input
               value={filterCountry}
               onChange={handleInputChange}

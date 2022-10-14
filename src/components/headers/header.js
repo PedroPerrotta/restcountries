@@ -8,7 +8,7 @@ const header = () => {
   return (
     <div className="header-container px-5 pt-4 pb-3">
       <Link to="/"><h1 className="title">Where in the world?</h1></Link>
-      <button type='button' onClick={handleTheme} className="theme-mode"><i class="fas moon-icon fa-moon"></i> Dark Mode</button>
+      <button type='button' onClick={handleTheme} className="theme-mode"><i className="fas moon-icon fa-moon"></i> Dark Mode</button>
     </div>
   );
 };
