@@ -10,29 +10,72 @@ const SingleCountry = () => {
   const [content, setContent] = useState(<div></div>);
 
   const getCountryInfo = async () => {
-      response = await getCountry(country);
-      console.log(response);
+    response = await getCountry(country);
+    // console.log(response);
+
+    let lang = response[0].languages;
+
+    let languages = [];
+
+    for (let [key, value] of Object.entries(lang)) {
+      languages += `${value} `;
+    }
+    
+    let curr = response[0].currencies;
+
+    let currencies = [];
+
+    for (let [value] of Object.entries(curr)) {
+      currencies += `${value.name}`;
+    }
+
+    let brds = response[0].borders;
+    let borders = [<div className="borders mx-2 px-3 py-1">None Borders</div>];
+    console.log(borders);
+
+    if (brds) {
+      for (let [index, value] of Object.entries(brds)) {
+        borders[index] = <div className="borders mx-2 px-3 py-1">{value}</div>
+      } 
+    }
+
     setContent(
-      <div className="single-country-info-container">
-        <div className="single-flag-container">
-          <img src={response[0].flags.png}></img>
-        </div>
-        <div className="single-country-info">
-            <h1 className="country-title">{response[0].name.official}</h1>
+      <div className="single-country-info-container container-fluid p-0">
+        <div className="row mx-5">
+          <div className="single-flag-container col-6 p-0">
+            <img className="single-flag" src={response[0].flags.svg}></img>
+          </div>
+          <div className="single-country-info col-6">
+            <h1 className="country-title mb-5">{response[0].name.official}</h1>
             <div className="row">
-                <div className="col-6">
-                    <p className="country-data">Native Name: {response[0].name.nativeName[Object.keys(response[0].name.nativeName)[0]].official}</p>
-                    <p className="country-data">Population: {response[0].populations}</p>
-                    <p className="country-data">Region: {response[0].region}</p>
-                    <p className="country-data">Sub Region: {response[0].subregion} </p>
-                    <p className="country-data">Capital: {response[0].capital} </p>
-                </div>
-                <div className="col-6">
-                    <p className="country-data">Top Level Domain: {response[0].tld}</p>
-                    <p className="country-data">Currencies: {response[0].currencies[Object.keys(response[0].currencies)[0]].name}</p>
-                    <p className="country-data">Languages: {response[0].languages[Object.keys(response[0].languages)[0]]} </p>
-                </div>
+              <div className="col-6">
+                <p className="country-data">
+                  <strong>Native Name: </strong>
+                  {
+                    response[0].name.nativeName[
+                      Object.keys(response[0].name.nativeName)[0]
+                    ].official
+                  }
+                </p>
+                <p className="country-data">
+                  <strong>Population:</strong> {response[0].population}
+                </p>
+                <p className="country-data">Region: {response[0].region}</p>
+                <p className="country-data">
+                  <strong>Sub Region:</strong> {response[0].subregion}{" "}
+                </p>
+                <p className="country-data"><strong>Capital:</strong> {response[0].capital} </p>
+              </div>
+              <div className="col-6">
+                <p className="country-data">
+                  <strong>Top Level Domain:</strong> {response[0].tld}
+                </p>
+                <p className="country-data"><strong>Currencies:</strong> {currencies}</p>
+                <p className="country-data"><strong>Languages:</strong> {languages}</p>
+              </div>
+              <div className="col-12 mt-5"><strong>Border Countries:</strong> {borders}</div>
             </div>
+          </div>
         </div>
       </div>
     );

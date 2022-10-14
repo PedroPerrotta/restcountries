@@ -39,11 +39,12 @@
     }
   }
 
+  .shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+
   a {
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    color: $white;
-    text-decoration: none;
 
     &.back-button {
       background-color: $light-blue;

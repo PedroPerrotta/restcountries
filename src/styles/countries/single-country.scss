@@ -1,3 +1,30 @@
 .single-country-info-container {
     color: $white;
+
+    .single-flag {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .country-title {
+        font-weight: 700;
+    }
+
+    .country-data {
+        font-size: 15px;
+        font-weight: 100;
+
+        strong {
+            font-size: 18px;
+        }
+    }
+
+    .borders {
+        background-color: $light-blue;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+        font-size: 14px;
+        font-weight: 300;
+        display: inline-block;
+    }
 }
