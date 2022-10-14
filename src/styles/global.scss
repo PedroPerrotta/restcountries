@@ -1,0 +1,11 @@
+@import "./variables.scss";
+@import "./general/general-styles.scss";
+@import "./header/header.scss";
+@import "./filter/filter.scss";
+@import "./countries/countries-list.scss";
+@import "./countries/single-country.scss";
+
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}

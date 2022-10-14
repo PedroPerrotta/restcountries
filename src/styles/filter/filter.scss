@@ -1,0 +1,52 @@
+.filter-container {
+  input[type="text"] {
+    background-color: $light-blue;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    display: inline-block;
+    height: 50px;
+    padding-left: 7px;
+    width: 94%;
+
+    &::placeholder {
+      color: $white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .filter-input {
+      background-color: $light-blue;
+      display: inline-block;
+      padding: 0;
+    }
+  }
+
+  .regions {
+    background-color: $light-blue;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 300;
+    float: right;
+    height: 50px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  a {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: $white;
+    text-decoration: none;
+
+    &.back-button {
+      background-color: $light-blue;
+    }
+  }
+}
