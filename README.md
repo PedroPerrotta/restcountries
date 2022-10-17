@@ -34,12 +34,12 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-![desktop-dark](screenshots\desktop-dark.png "Desktop Dark theme");
-![desktop-light](screenshots\desktop-light.png "Desktop Light theme");
-![mobile-dark](screenshots\mobile-dark.png "Mobile Dark theme");
-![mobile-light](screenshots\mobile-light.png "Mobile Light theme");
-![single-country-desktop](screenshots\single-country-desktop.png "Single Country Desktop");
-![single-country-mobile](screenshots\single-country-mobile.png "Single Country Mobile");
+![desktop-dark](screenshots\desktop-dark.png);
+![desktop-light](screenshots\desktop-light.png);
+![mobile-dark](screenshots\mobile-dark.png);
+![mobile-light](screenshots\mobile-light.png);
+![single-country-desktop](screenshots\single-country-desktop.png);
+![single-country-mobile](screenshots\single-country-mobile.png);
 
 
 ### Links
