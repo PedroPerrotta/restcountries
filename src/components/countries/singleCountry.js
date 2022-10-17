@@ -41,14 +41,14 @@ const SingleCountry = () => {
 
     setContent(
       <div className="single-country-info-container container-fluid p-0">
-        <div className="row mx-5">
-          <div className="single-flag-container col-6 p-0">
+        <div className="row mx-4 mx-sm-5">
+          <div className="single-flag-container mb-5 mb-md-0 col-12 col-md-6 p-0">
             <img className="single-flag" src={response[0].flags.svg}></img>
           </div>
-          <div className="single-country-info col-6">
+          <div className="single-country-info col-12 col-md-6">
             <h1 className="country-title mb-5">{response[0].name.official}</h1>
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-md-6 mb-5 mb-md-0">
                 <p className="country-data">
                   <strong>Native Name: </strong>
                   {
@@ -66,7 +66,7 @@ const SingleCountry = () => {
                 </p>
                 <p className="country-data"><strong>Capital:</strong> {response[0].capital} </p>
               </div>
-              <div className="col-6">
+              <div className="col-12 col-md-6">
                 <p className="country-data">
                   <strong>Top Level Domain:</strong> {response[0].tld}
                 </p>

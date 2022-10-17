@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const CountryCard = (props) => {
   return (
-    <div className="single-country-list-container col-3 px-5 py-3">
-      <div className="shadow country-list-card" to={`/${props.name}`}>
+    <div className="single-country-list-container col-sm-6 col-lg-4 col-xl-3 px-5 px-sm-5 py-3">
+      <div className="applied-shadow country-list-card" to={`/${props.name}`}>
         <Link className="country-link" to={`/country/${props.name}`}>
           <img
             className="all-countries-flag mb-4"

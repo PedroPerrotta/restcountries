@@ -34,6 +34,10 @@
         }
     }
 
+    .applied-shadow {
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.26);
+    }
+
 }
 
 .not-found {
@@ -51,10 +55,14 @@
         .country-link {
             color: $dark-black;
         }
+
+        .all-countries-flag {
+            border-bottom: solid black;
+        }
     }
 
-    .shadow {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    .applied-shadow {
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.26);
     }
 
     .not-found {

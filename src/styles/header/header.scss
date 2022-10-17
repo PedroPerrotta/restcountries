@@ -5,8 +5,8 @@
 
   .title {
     display: inline-block;
-    font-size: 30px;
     font-weight: 300;
+    font-size: calc(1em + 1vw);
   }
 
   .theme-mode {
@@ -14,6 +14,7 @@
     border: none;
     color: $white;
     float: right;
+    
 
     .header-image {
       color: $white;
