@@ -34,12 +34,12 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-![desktop-dark](screenshots\desktop-dark.png);
-![desktop-light](screenshots\desktop-light.png);
-![mobile-dark](screenshots\mobile-dark.png);
-![mobile-light](screenshots\mobile-light.png);
-![single-country-desktop](screenshots\single-country-desktop.png);
-![single-country-mobile](screenshots\single-country-mobile.png);
+![desktop-dark](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/desktop-dark.png);
+![desktop-light](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/desktop-light.png);
+![mobile-dark](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/mobile-dark.png);
+![mobile-light](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/mobile-light.png);
+![single-country-desktop](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/single-country-desktop-dark.png);
+![single-country-mobile](https://github.com/PedroPerrotta/restcountries/blob/main/screenshots/single-country-mobile-light.png);
 
 
 ### Links
