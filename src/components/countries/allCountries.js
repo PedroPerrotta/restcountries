@@ -19,6 +19,7 @@ const AllCountries = (props) => {
   const getCountries = async () => {
     setIsLoading(true)
     response = await getAllCountries();
+    console.log(response);
     setCountries(response);
     setIsLoading(false);
   };

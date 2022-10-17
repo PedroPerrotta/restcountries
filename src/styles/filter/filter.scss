@@ -22,7 +22,7 @@
   .filter-row {
     padding-left: 12px;
   }
-  
+
   .filter-input {
     background-color: $light-blue;
     border-radius: 5px;
@@ -44,12 +44,11 @@
       font-size: 14px;
       font-weight: 300;
       height: 50px;
-  
+
       @media (min-width: 768px) {
-        
         float: right;
       }
-  
+
       &:focus {
         outline: none;
       }
@@ -82,7 +81,7 @@
     input[type="text"] {
       background-color: $white;
       color: $dark-black;
-  
+
       &::placeholder {
         color: $dark-black;
       }
@@ -92,19 +91,19 @@
       background-color: $white;
       color: $dark-black;
     }
-  }
 
-  .filter-input {
-    background-color: $white;
-  }
+    .filter-input {
+      background-color: $white;
+    }
 
-  .regions {
-    background-color: $white;
-    color: $dark-black;
-  }
+    .regions {
+      background-color: $white;
+      color: $dark-black;
+    }
 
-  .magnifying-icon {
-    background-color: $white;
-    color: $dark-black;
+    .magnifying-icon {
+      background-color: $white;
+      color: $dark-black;
+    }
   }
 }

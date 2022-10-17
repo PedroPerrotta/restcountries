@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getCountry } from "../../httpCalls/requests";
 import Filter from "../filter/filter";
 import Header from "../headers/header";
+import { Link } from "react-router-dom";
 
 const SingleCountry = () => {
   const country = useParams().country;
