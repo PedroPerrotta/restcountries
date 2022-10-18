@@ -13,8 +13,6 @@ const SingleCountry = () => {
   const getCountryInfo = async () => {
     response = await getCountry(country);
 
-    console.log(response[0]);
-
     let lang = response[0].languages;
 
     let languages = [];
